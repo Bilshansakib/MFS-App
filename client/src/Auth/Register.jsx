@@ -11,10 +11,12 @@ import {
 } from "antd";
 import { Link } from "react-router-dom";
 import registerImage from "../assets/MFSAppRegPage.jpg";
+import useSignUp from "../hooks/useSignUp";
 
 const Register = () => {
+    const {loading,error,registerUser} = useSignUp()
   const handleRegister = (values) => {
-    console.log(values);
+    registerUser(values);
   };
   return (
     <Card className=" w-[1000px] flex items-center justify-start border-2 ">
@@ -91,7 +93,7 @@ const Register = () => {
               ></Input.Password>
             </Form.Item>
 
-            {/* {error && (
+            {error && (
                 <Alert
                 description={error}
                 type="error"
@@ -101,17 +103,17 @@ const Register = () => {
                 >
 
                 </Alert>
-            )} */}
+            )}
 
             <Form.Item>
               <Button
-                // type={`${loading ? "" : "primary"}`}
+                type={`${loading ? "" : "primary"}`}
                 htmlType="submit"
                 size="large"
                 className="btn w-full"
               >
-                {/* {loading ? <Spin></Spin> : " Create Account"} */}
-                Create Account
+                {loading ? <Spin></Spin> : " Create Account"}
+               
               </Button>
             </Form.Item>
             <Form.Item>

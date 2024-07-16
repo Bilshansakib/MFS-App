@@ -4,7 +4,9 @@ import Register from "../Auth/Register";
 import Login from "../Auth/Login";
 import Dashboard from "../Pages/Dashboard";
 
+
 export const router = createBrowserRouter([
+    
     {
       path: "/",
       element: <Main></Main>,
