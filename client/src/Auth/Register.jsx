@@ -1,14 +1,24 @@
-import { Button, Card, Flex, Form, Input, message, Typography } from "antd";
+import {
+  Alert,
+  Button,
+  Card,
+  Flex,
+  Form,
+  Input,
+  message,
+  Spin,
+  Typography,
+} from "antd";
 import { Link } from "react-router-dom";
-import  registerImage  from "../assets/MFSAppRegPage.jpg";
+import registerImage from "../assets/MFSAppRegPage.jpg";
 
 const Register = () => {
   const handleRegister = (values) => {
     console.log(values);
   };
   return (
-    <Card className="h-screen w-[1000px] flex items-center justify-start border-2 ">
-      <Flex>
+    <Card className=" w-[1000px] flex items-center justify-start border-2 ">
+      <Flex gap="large" align="center">
         <Flex vertical flex={1}>
           {/* form */}
           <Typography.Title level={3} strong className="title">
@@ -81,13 +91,26 @@ const Register = () => {
               ></Input.Password>
             </Form.Item>
 
+            {/* {error && (
+                <Alert
+                description={error}
+                type="error"
+                showIcon
+                closable
+                className="alert"
+                >
+
+                </Alert>
+            )} */}
+
             <Form.Item>
               <Button
-                type="primary"
+                // type={`${loading ? "" : "primary"}`}
                 htmlType="submit"
                 size="large"
                 className="btn w-full"
               >
+                {/* {loading ? <Spin></Spin> : " Create Account"} */}
                 Create Account
               </Button>
             </Form.Item>
@@ -102,7 +125,7 @@ const Register = () => {
           </Form>
         </Flex>
         <Flex flex={1}>
-          <img src={registerImage} className="w-full"></img>
+          <img src={registerImage} className="w-full rounded-lg"></img>
         </Flex>
 
         {/* Image */}
