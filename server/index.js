@@ -1,8 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bcrypt = require('bcrypt');
 const app = express();
 
 const cors = require("cors");
+// const authRouter = require('./routes/authRoute')
+
 const port = process.env.PORT || 9000;
 // middleware
 const corsOptions = {
@@ -19,7 +22,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
-// routes
+// 2 routes
+// app.use('/api/auth', authRouter)
+
 
 // mongoDB
 // mongoose
